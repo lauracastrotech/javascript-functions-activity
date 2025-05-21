@@ -16,6 +16,7 @@ const convert_fahren = (tempInF) => {
 
 console.log(convert_fahren(32));
 console.log(convert_fahren(105));
+
 // Convert the python function below to a javascript function
 
 // def pairs_with_given_sum(numbers, target):
@@ -26,18 +27,20 @@ console.log(convert_fahren(105));
 //                 total += 1
 //     return total
 
-//   const pairs_with_given_sum = (numbers, target) => {
-//     total = 0
-//     for(let i = 0; i < numbers.length-1; 1){
-//       for(let j = i+1; i < numbers.length; 1){
-//         if(numbers[i]+numbers[j] == target){
-//           total += 1;
-//         };
-//       };
-//     }
-//     return total  
-//   }
+const pairs_with_given_sum = (numbers, target) => {
+    let total = 0;
+    for(let i = 0; i < numbers.length-1; i++){
+      for(let j = i+1; j < numbers.length; j++){
+        if((numbers[i]+numbers[j]) == target){
+          total += 1;
+        };
+      };
+    }
+    return total;  
+}
 
+console.log(pairs_with_given_sum([2,5,7,3,4,9,0], 7));
+console.log(pairs_with_given_sum([3,3,9,0], 6));
 
 // Using the setInterval function (described below), register a callback function to be called every second.
 // Consider printing some output so that you can see that the callback is running.
@@ -49,4 +52,10 @@ console.log(convert_fahren(105));
 //
 // Check out the MDN documentation for setInterval (and setTimeout) for additional details
 
-// add your call here
+let intervalID = setInterval(foo,1000);
+
+function foo() {
+  console.log("Just a second...")
+}
+
+
